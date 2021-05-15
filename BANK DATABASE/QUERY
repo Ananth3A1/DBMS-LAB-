@@ -120,3 +120,6 @@ from Depositer s
 where exists (
 (select * from Bank b, BankAcc c
 where s.AccNo=c.AccNo and  c.BranchName=b.BranchName and b.BrachCity="Bangalore"));
+
+delete from Accounts where BranchName in(select BranchName from Branch where BranchCity="Bangalore");
+commit;
